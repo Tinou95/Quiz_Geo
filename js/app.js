@@ -26,13 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const randomCountry = countries[randomIndex];
   
     // Récupérer le nom du pays et son drapeau
-    const countryName = randomCountry.name.common;
+    const countryName = randomCountry.translations.fra.common;
     const flagUrl = randomCountry.flags.svg;
   
     // Récupérer la capitale du pays
     let capital = '';
     if (randomCountry.capital && typeof randomCountry.capital === 'string') {
-      capital = randomCountry.capital;
+      capital = randomCountry.translations.fra.common;
     } else if (randomCountry.capital && typeof randomCountry.capital === 'object') {
       // Dans certains cas, la capitale peut être un objet avec des noms de différentes langues
       capital = Object.values(randomCountry.capital)[0];
